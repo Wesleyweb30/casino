@@ -65,8 +65,8 @@ The application should now be running on `http://localhost:8080`.
     - Request Body:
         ```json
         {
-            "nome": "Slot Machine 1",
-            "moeda": 1.0,
+            "name": "Slot Machine 1",
+            "coin": 1.0,
             "status": true
         }
         ```
@@ -79,8 +79,8 @@ The application should now be running on `http://localhost:8080`.
     - Request Body:
         ```json
         {
-            "nome": "Updated Machine Name",
-            "moeda": 2.0,
+            "name": "Updated Machine Name",
+            "coin": 2.0,
             "status": false
         }
         ```
