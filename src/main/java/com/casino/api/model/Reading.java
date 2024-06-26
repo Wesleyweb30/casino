@@ -12,6 +12,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Represents a reading associated with a specific machine in the casino.
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -23,22 +26,22 @@ public class Reading {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "initialEntry")
+    @Column(name = "initial_entry")
     private Integer initialEntry;
 
-    @Column(name = "finalEntry")
+    @Column(name = "final_entry")
     private Integer finalEntry;
 
-    @Column(name = "initialExit")
+    @Column(name = "initial_exit")
     private Integer initialExit;
 
-    @Column(name = "finalExit")
+    @Column(name = "final_exit")
     private Integer finalExit;
 
-    @Column(name = "resultExit")
+    @Column(name = "result_exit")
     private Double resultExit;
 
-    @Column(name = "resultEntry")
+    @Column(name = "result_entry")
     private Double resultEntry;
 
     private Double result;

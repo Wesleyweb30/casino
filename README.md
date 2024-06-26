@@ -9,7 +9,6 @@ Welcome to the Casino Management System project! This system is designed to help
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
 - [Endpoints](#endpoints)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Overview
@@ -28,7 +27,7 @@ The Casino Management System is a Spring Boot application that allows for the ma
 - **Spring Data JPA**: For data persistence.
 - **Lombok**: To reduce boilerplate code.
 - **Jakarta Validation**: For data validation.
-- **Mysql**: database for development.
+- **MySQL**: Database for development.
 - **Maven**: For project management and dependency management.
 
 ## Getting Started
@@ -39,6 +38,7 @@ To get a local copy up and running, follow these steps.
 
 - JDK 11 or later
 - Maven
+- MySQL database
 
 ### Installation
 
@@ -50,9 +50,10 @@ To get a local copy up and running, follow these steps.
     ```sh
     cd casino
     ```
-3. Create database:
-    ```sh
-    casino
+
+3. Create the MySQL database (assuming MySQL is installed and running):
+    ```sql
+    CREATE DATABASE casino;
     ```
 
 The application should now be running on `http://localhost:8080`.
@@ -115,11 +116,10 @@ The application should now be running on `http://localhost:8080`.
 
 ### Reading Endpoints
 
-- **Create a new reading**: `POST /readings`
+- **Create a new reading**: `POST /machines/{machineId}/readings`
     - Request Body:
         ```json
         {
-            "machineId": 1,
             "initialEntry": 100.0,
             "finalEntry": 200.0,
             "initialExit": 50.0,
@@ -128,7 +128,7 @@ The application should now be running on `http://localhost:8080`.
         }
         ```
 
-- **Get all readings**: `GET /readings`
+- **Get all readings for a machine**: `GET /machines/{machineId}/readings`
 
 - **Get a reading by ID**: `GET /readings/{id}`
 
@@ -146,7 +146,6 @@ The application should now be running on `http://localhost:8080`.
         ```
 
 - **Delete a reading**: `DELETE /readings/{id}`
-
 
 ## License
 
